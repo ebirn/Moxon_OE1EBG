@@ -113,6 +113,18 @@ def apply_configs_to_array():
         print(f"Warning: Found {len(array_elements)} array elements, but have {num_configs} configurations.")
         print("The array might not be fully generating independent child Links.")
 
+    # --- FORCE ENUMERATION REFRESH ---
+    # First, mark the "config" property of all elements as Touched
+    for element in array_elements:
+        if hasattr(element, "config"):
+            try:
+                element.setPropertyStatus("config", "Touched")
+            except Exception:
+                pass
+                
+    # Recompute the document so FreeCAD rebuilds the valid Enum list internally
+    doc.recompute()
+
     # Assign each found element a config string
     for i, config_name in enumerate(configs):
         if i >= len(array_elements):
