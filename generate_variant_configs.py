@@ -16,9 +16,9 @@ def generate_variant_combinations():
     # --- 1. DEFINE YOUR PARAMETER LISTS HERE ---
     # Edit these lists to contain the values you want to combine.
     # You can use integers, floats, or strings with units (e.g., "15 mm").
-    param1_values = [10.0, 10.1]       # Example: Length
-    param2_values = [0.3, 0.5, 0.7]         # Example: HexIndent
-    param3_values = [5, 10]   # HexLength
+    param1_values = [10.1, 10.2]       # Example: Length
+    param2_values = [0.3, 0.5, 0.7, 0.9]         # Example: HexIndent
+    param3_values = [10]   # HexLength
     
     spreadsheet_label = "VariantData"
     sheet = get_object_by_user_label(doc, spreadsheet_label)
