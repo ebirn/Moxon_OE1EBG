@@ -5,3 +5,4 @@ __pycache__
 .DS_Store
 opencode.jsonc
 *.egg-info
+.freecad_tools/fc_export.log
