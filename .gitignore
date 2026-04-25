@@ -1,1 +1,7 @@
 *.FCBak
+__pycache__
+.venv
+*.log
+.DS_Store
+opencode.jsonc
+*.egg-info
