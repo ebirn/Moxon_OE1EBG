@@ -20,7 +20,7 @@ jobs:
     uses: ebirn/freecad_tools/.github/workflows/publish-tagged-release.yml@main
     with:
       config_path: .freecad_tools/export.yml
-      project_root: ..
+      project_root: .
       gui_session: run
       dry_run: false
       freecad_gui_binary: /opt/freecad/usr/bin/freecad
