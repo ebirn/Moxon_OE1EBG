@@ -1,0 +1,26 @@
+---
+name: Nightly Release
+
+"on":
+  schedule:
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    uses: ebirn/freecad_tools/.github/workflows/publish-nightly-release.yml@main
+    with:
+      config_path: export_config.yml
+      project_root: .
+      gui_session: run
+      dry_run: false
+      freecad_gui_binary: /opt/freecad/usr/bin/freecad
+      nightly_tag: nightly
+      bundle_name_prefix: Moxon_OE1EBG-nightly
+      bundle_paths: >-
+        README.md  Moxon_OE1EBG.FCStd
+      generated_paths: >-
+        docs prints

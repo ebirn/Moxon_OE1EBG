@@ -1,0 +1,32 @@
+---
+name: Tagged Release
+
+"on":
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Optional tag name override for manual runs
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    uses: ebirn/freecad_tools/.github/workflows/publish-tagged-release.yml@main
+    with:
+      config_path: .freecad_tools/export.yml
+      project_root: .
+      gui_session: run
+      dry_run: false
+      freecad_gui_binary: /opt/freecad/usr/bin/freecad
+      release_tag: ${{ github.event.inputs.release_tag || '' }}
+      bundle_name_prefix: Moxon_OE1EBG
+      bundle_paths: >-
+        README.md INSTRUCTIONS.md Moxon_OE1EBG.FCStd LICENSE.txt
+      generated_paths: >-
+        docs prints
