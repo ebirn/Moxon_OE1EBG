@@ -16,3 +16,11 @@ export:
     keep_stl: true
     # Directory to store STL files (only used if keep_stl is true)
     stl_output_dir: prints/stl
+    techdraw_source: all
+    techdraw:
+      output_dir: docs
+      format: pdf
+      instructions: INSTRUCTIONS.md
+    bom:
+      source: assembly
+      output: docs/bom.csv

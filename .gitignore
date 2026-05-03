@@ -6,3 +6,6 @@ __pycache__
 opencode.jsonc
 *.egg-info
 .freecad_tools/fc_export.log
+prints
+docs
+fc_export.log
