@@ -25,7 +25,7 @@ jobs:
       dry_run: false
       freecad_gui_binary: /opt/freecad/usr/bin/freecad
       release_tag: ${{ github.event.inputs.release_tag || '' }}
-      bundle_name_prefix: Moxon_OE1EBG
+      bundle_name: Moxon_OE1EBG
       bundle_paths: >-
         README.md INSTRUCTIONS.md Moxon_OE1EBG.FCStd LICENSE.txt
       generated_paths: >-
