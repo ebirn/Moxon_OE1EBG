@@ -21,6 +21,6 @@ jobs:
       nightly_tag: nightly
       bundle_name: Moxon_OE1EBG-nightly
       bundle_paths: >-
-        README.md  Moxon_OE1EBG.FCStd
+        README.md INSTRUCTIONS.md Moxon_OE1EBG.FCStd
       generated_paths: >-
         docs prints

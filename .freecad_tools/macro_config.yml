@@ -1,2 +1,16 @@
 array_label: VariantTestArray
+cleanup_before_assign: true
+# cleanup_untagged_copy_groups: true
+enable_link_copy_on_change: true
+
 spreadsheet_label: VariantData
+parameters:
+  - name: PipeDiameter
+    values: [10.1, 10.2]
+    # start: 10.1
+    # stop: 10.3
+    # step: 0.1
+  - name: HexIndent
+    values: [0.3, 0.5, 0.7, 0.9]
+  - name: HexLength
+    values: [5]
