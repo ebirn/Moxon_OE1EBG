@@ -10,7 +10,7 @@ name: CI
 
 jobs:
   build-artifacts-dry-run:
-    uses: ebirn/freecad_tools/.github/workflows/build-3mf-artifacts.yml@main
+    uses: ebirn/freecad_tools/.github/workflows/reusable-build-3mf-artifacts.yml@main
     with:
       config_path: .freecad_tools/export.yml
       project_root: .
