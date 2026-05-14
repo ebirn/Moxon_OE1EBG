@@ -4,9 +4,13 @@ export:
     # Can specify bodies by Name (Body) or Label (Feed001, Cover001, etc) - more user-friendly
     bodies:
       - Feed001           # Actual Label: Feed001 (Name: Body)
-      - Cover001          # Actual Label: Cover001 (Name: Body002)
+      - body: Cover001          # Actual Label: Cover001 (Name: Body002)
+        rotation: [0, 180, 0]
+        position: [90, 90, 0]
       - body: "Angle Round"     # Actual Label: Angle Round (Name: Body003)
-        count: 2                # Number of copies to include in the 3MF (default: 1)
+        position: [50, 0, 0]
+      - body: "Angle Round"     # Actual Label: Angle Round (Name: Body003)
+        position: [50, 50, 0]
 
     # Optional: output filename (default: prints/{name}.3mf)
     output: prints/Moxon_OE1EBG.3mf
