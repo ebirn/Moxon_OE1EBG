@@ -3,8 +3,8 @@ files: \.(fcstd|3mf|stl|yaml|yml)$
 repos:
   - repo: https://github.com/ebirn/freecad_tools
     rev: v0.5.0
-    hooks: []
+    hooks:
     #  - id: freecad-export
-    #  - id: freecad-export-manual
+    - id: freecad-export-manual
 
 default_install_hook_types: [pre-commit, pre-push]
