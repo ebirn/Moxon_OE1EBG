@@ -7,6 +7,7 @@ name: Nightly Release
   workflow_dispatch:
 
 permissions:
+  actions: read
   contents: write
 
 jobs:
