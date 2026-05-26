@@ -12,6 +12,8 @@ export:
         position: [50, 0, 0]
       - body: "Angle Round"     # Actual Label: Angle Round (Name: Body003)
         position: [50, 50, 0]
+      - body: "BackT"
+        position: [-50, 30, 0]
 
     # Optional: output filename (default: prints/{name}.3mf)
     output: prints/Moxon_OE1EBG.3mf
