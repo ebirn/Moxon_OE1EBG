@@ -8,6 +8,10 @@ name: CI
       - "**"
   pull_request:
 
+permissions:
+  contents: read
+  actions: read
+
 jobs:
   build-artifacts-dry-run:
     uses: ebirn/freecad_tools/.github/workflows/reusable-build-3mf-artifacts.yml@main
