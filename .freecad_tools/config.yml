@@ -14,7 +14,7 @@ export:
         position: [50, 50, 0]
 
     # Optional: output filename (default: prints/{name}.3mf)
-    output: prints/Moxon_OE1EBG.3mf
+    output: prints/Moxon_OE1EBG_corner.3mf
     # Optional: template 3MF file with pre-configured printer settings
     template: .freecad_tools/template_print_settings.3mf
     # Keep generated STL files after creating 3MF (default: false)
@@ -36,9 +36,9 @@ export:
       - Feed           # Actual Label: Feed001 (Name: Body)
       - body: Cover          # Actual Label: Cover001 (Name: Body002)
         rotation: [0, 180, 0]
-        position: [90, 90, 0]
+        position: [30, 30, 0]
       - body: "BackT"
-        position: [0, -70, 0]
+        position: [50, -40, 0]
     # Optional: output filename (default: prints/{name}.3mf)
     output: prints/Moxon_OE1EBG_BackT.3mf
     # Optional: template 3MF file with pre-configured printer settings
