@@ -1,6 +1,6 @@
 ---
 export:
-  - name: Moxon_OE1EBG
+  - name: Moxon_OE1EBG_round
     source: Moxon_OE1EBG.FCStd
     # Can specify bodies by Name (Body) or Label (Feed001, Cover001, etc) - more user-friendly
     bodies:
@@ -14,7 +14,7 @@ export:
         position: [50, 50, 0]
 
     # Optional: output filename (default: prints/{name}.3mf)
-    output: prints/Moxon_OE1EBG.3mf
+    output: prints/Moxon_OE1EBG_corner.3mf
     # Optional: template 3MF file with pre-configured printer settings
     template: .freecad_tools/template_print_settings.3mf
     # Keep generated STL files after creating 3MF (default: false)
@@ -28,7 +28,26 @@ export:
       instructions: INSTRUCTIONS.md
     bom:
       source: assembly
-      output: docs/bom.csv
+      output: docs/bom_corner.csv
+  - name: Moxon_OE1EBG_BackT
+    source: Moxon_OE1EBG.FCStd
+    # Can specify bodies by Name (Body) or Label (Feed001, Cover001, etc) - more user-friendly
+    bodies:
+      - Feed           # Actual Label: Feed001 (Name: Body)
+      - body: Cover          # Actual Label: Cover001 (Name: Body002)
+        rotation: [0, 180, 0]
+        position: [30, 30, 0]
+      - body: "BackT"
+        position: [50, -40, 0]
+    # Optional: output filename (default: prints/{name}.3mf)
+    output: prints/Moxon_OE1EBG_BackT.3mf
+    # Optional: template 3MF file with pre-configured printer settings
+    template: .freecad_tools/template_print_settings.3mf
+    # Keep generated STL files after creating 3MF (default: false)
+    keep_stl: true
+    bom:
+      source: assembly
+      output: docs/bom_backt.csv
 
 macros:
   variant_array_assignment:
