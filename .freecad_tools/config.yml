@@ -28,7 +28,7 @@ export:
       instructions: INSTRUCTIONS.md
     bom:
       source: assembly
-      output: docs/bom.csv
+      output: docs/bom_corner.csv
   - name: Moxon_OE1EBG_BackT
     source: Moxon_OE1EBG.FCStd
     # Can specify bodies by Name (Body) or Label (Feed001, Cover001, etc) - more user-friendly
@@ -45,6 +45,9 @@ export:
     template: .freecad_tools/template_print_settings.3mf
     # Keep generated STL files after creating 3MF (default: false)
     keep_stl: true
+    bom:
+      source: assembly
+      output: docs/bom_backt.csv
 
 macros:
   variant_array_assignment:
