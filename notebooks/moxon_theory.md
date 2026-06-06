@@ -25,11 +25,11 @@ This kit uses two T-pieces to hold the antenna in an H-shaped frame. Four equal 
 The notebook derives these mechanical pipe dimensions from the electrical Moxon dimensions:
 
 ```text
-outer_pipe_length = A / 2 - radiator_offset
-center_pipe_length = E - other_offset
+outer_pipe_length = A / 2 - radiator_pipe_offset
+center_pipe_length = E - center_pipe_offset
 ```
 
-The offsets account for socket depth, printed part geometry, wire attachment position, or any other mechanical distance between the pipe end and the actual electrical wire position. They are defined globally in the notebook as `RADIATOR_OFFSET_MM` and `OTHER_OFFSET_MM`, so a kit-specific value can be set once and reused for every frequency.
+The offsets account for socket depth, printed part geometry, wire attachment position, or any other mechanical distance between the pipe end and the actual electrical wire position. They are defined globally in the notebook as `RADIATOR_PIPE_OFFSET_MM` and `CENTER_PIPE_OFFSET_MM`, so a kit-specific value can be set once and reused for every frequency.
 
 ## Why the Moxon works
 

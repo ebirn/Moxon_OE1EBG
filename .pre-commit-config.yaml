@@ -1,6 +1,13 @@
 minimum_pre_commit_version: "4.5.0"
-files: \.(fcstd|3mf|stl|yaml|yml)$
+files: \.(fcstd|3mf|stl|yaml|yml|ipynb)$
 repos:
+  - repo: local
+    hooks:
+      - id: clear-notebook-outputs
+        name: clear notebook outputs
+        entry: jupyter nbconvert --clear-output --inplace
+        language: system
+        files: \.ipynb$
   - repo: https://github.com/ebirn/freecad_tools
     rev: v0.6.0
     hooks:

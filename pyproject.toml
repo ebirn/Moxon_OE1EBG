@@ -1,0 +1,15 @@
+[project]
+name = "moxon-oe1ebg"
+version = "0.1.0"
+description = "Moxon antenna kit tooling and interactive calculator"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "freecad-tools @ git+https://github.com/ebirn/freecad_tools@v0.6.0",
+    "ipykernel>=7.0",
+    "ipywidgets>=8.1",
+    "jupyterlab>=4.0",
+    "matplotlib>=3.8",
+    "nbconvert>=7.16",
+    "pre-commit>=4.5",
+]
