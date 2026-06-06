@@ -93,3 +93,15 @@ Use the notebook dimensions as a starting point, not as final guaranteed dimensi
 ## Limitations of the notebook calculator
 
 The notebook uses practical proportional dimensions calibrated against typical online Moxon calculator output for 2 m and 70 cm examples. It is intended for visualization, kit documentation, and first-cut mechanical planning. For a production antenna or a critical build, validate the dimensions with a NEC model, a known calculator such as MoxGen/W4RNL-derived tools, and real VNA measurements.
+
+## References
+
+The notebook dimensions and explanations were cross-checked against these Moxon references and calculators:
+
+| Reference | Notes |
+| --- | --- |
+| [W6BSD Moxon Antenna Calculator](https://0x9900.com/moxon-antenna-calculator/) | Online calculator used for the 145 MHz and 435 MHz reference screenshots in this repository. |
+| [3G-aerial Moxon Antenna Calculator](https://3g-aerial.biz/en/online-calculations/antenna-calculations/moxon-antenna-calculator) | Online Moxon calculator with NEC/MMANA export; documents its W4RNL/Cebik and MoxGen-style basis. |
+| [AC6LA MoxGen](http://www.ac6la.com/moxgen.html) | Classic Moxon Rectangle Generator by Dan Maguire, AC6LA, based on L. B. Cebik's algorithm. |
+| [L. B. Cebik, W4RNL: The Moxon Rectangle: A Review](http://www.antentop.org/w4rnl.001/mox20.html) | Background article on Moxon rectangle behavior, geometry, and modeling. |
+| [Moxon antenna overview](https://en.wikipedia.org/wiki/Moxon_antenna) | General overview and historical context for the Moxon rectangle. |
