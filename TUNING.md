@@ -8,13 +8,19 @@ The goal is not only a low SWR. A Moxon rectangle is a coupled two-element anten
 
 Use the same dimension names as the calculator and theory note:
 
+![Moxon starter dimension diagram](img/Moxon_dimensions_2m.png)
+
+The image shows the plan-view antenna geometry for a 145 MHz starter build. The exact values will change with frequency, conductor diameter, velocity factor, and final tuning, but the letters keep the same meaning.
+
 | Symbol | Meaning | Tuning role |
 | --- | --- | --- |
-| `A` | Long straight section of the driven side and reflector side | Sets the broad physical span |
-| `B` | Driven-element folded tail length at each end | Part of driven-element electrical length |
-| `C` | Gap between the driven tail and reflector tail | Controls coupling, match, and front-to-back behavior |
-| `D` | Reflector folded tail length at each end | Part of reflector electrical length |
-| `E` | Spacing between driven side and reflector side | Controls impedance, gain, and pattern |
+| `A` | Horizontal span of the long driven side and the long reflector side | The left-to-right rectangle width. In the image, this is the purple `A span` arrow across the top. |
+| `B` | Driven-element folded tail length at each end | The short vertical driven tails that turn down from the top driven element. In the image, this is `B tail`. |
+| `C` | End gap between the driven tail and reflector tail | The small open space between the two facing wire ends on each side. In the image, this is `C gap`. |
+| `D` | Reflector folded tail length at each end | The short vertical reflector tails that turn up from the bottom reflector. In the image, this is `D tail`. |
+| `E` | Spacing between the driven side and reflector side | The front-to-back spacing between the top driven element and bottom reflector. In the image, this is `E spacing`. |
+
+The blue dotted lines in the image are the H-frame pipe cuts for this kit, not electrical Moxon dimensions. They are derived from `A` and `E` after subtracting the printed-part offsets. The green dashed diagonal is a useful mechanical check that the rectangle is square and repeatable.
 
 The driven element is split at the feed point. The reflector is continuous. The two `C` gaps must be equal, and the left and right halves must stay symmetrical.
 
