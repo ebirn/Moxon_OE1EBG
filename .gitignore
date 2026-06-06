@@ -5,6 +5,7 @@ __pycache__
 .DS_Store
 opencode.jsonc
 *.egg-info
+.ipynb_checkpoints
 .freecad_tools/fc_export.log
 .freecad_tools/export.yml
 prints
