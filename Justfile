@@ -24,3 +24,7 @@ export-all:
 # list all available exports defined in the config
 export-list:
     source .venv/bin/activate && freecad-export --config {{config}} --list-exports
+
+# launch a notebook locally with JupyterLab
+notebook path="notebooks/moxon_tuning_protocol.ipynb":
+    uv run jupyter lab {{path}}
