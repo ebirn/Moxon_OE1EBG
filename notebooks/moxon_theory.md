@@ -104,4 +104,5 @@ The notebook dimensions and explanations were cross-checked against these Moxon 
 | [3G-aerial Moxon Antenna Calculator](https://3g-aerial.biz/en/online-calculations/antenna-calculations/moxon-antenna-calculator) | Online Moxon calculator with NEC/MMANA export; documents its W4RNL/Cebik and MoxGen-style basis. |
 | [AC6LA MoxGen](http://www.ac6la.com/moxgen.html) | Classic Moxon Rectangle Generator by Dan Maguire, AC6LA, based on L. B. Cebik's algorithm. |
 | [L. B. Cebik, W4RNL: The Moxon Rectangle: A Review](http://www.antentop.org/w4rnl.001/mox20.html) | Background article on Moxon rectangle behavior, geometry, and modeling. |
+| [Moxon Antenna Project](https://moxonantennaproject.net/index.html) | Collection of Moxon antenna articles, dimensions, models, and practical builder examples. |
 | [Moxon antenna overview](https://en.wikipedia.org/wiki/Moxon_antenna) | General overview and historical context for the Moxon rectangle. |
