@@ -12,6 +12,13 @@ permissions:
   contents: read
   actions: read
 
+# A push to a branch with an open PR fires both "push" and "pull_request".
+# Group both under the branch name (head_ref for PRs, ref for plain pushes)
+# so the older, now-redundant run gets cancelled instead of both running.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-artifacts-dry-run:
     uses: ebirn/freecad_tools/.github/workflows/reusable-build-3mf-artifacts.yml@main
