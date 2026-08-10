@@ -8,6 +8,11 @@ repos:
         entry: jupyter nbconvert --clear-output --inplace
         language: system
         files: \.ipynb$
+      - id: notebook-dry-run
+        name: notebook dry-run (execute to catch errors before commit)
+        entry: bash -c 'set -e; for f in "$@"; do jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=180 --output-dir "$(mktemp -d)" "$f"; done' --
+        language: system
+        files: \.ipynb$
   - repo: https://github.com/ebirn/freecad_tools
     rev: v0.6.0
     hooks:

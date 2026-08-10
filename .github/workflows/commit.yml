@@ -21,3 +21,23 @@ jobs:
       gui_session: item
       dry_run: true
       artifact_glob: prints/** docs/**
+
+  notebook-dry-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+      - name: Install dependencies
+        run: uv sync
+      - name: Execute notebooks
+        run: |
+          for f in notebooks/*.ipynb; do
+            echo "::group::$f"
+            uv run jupyter nbconvert --to notebook --execute \
+              --ExecutePreprocessor.timeout=180 \
+              --output-dir "$(mktemp -d)" "$f"
+            echo "::endgroup::"
+          done
