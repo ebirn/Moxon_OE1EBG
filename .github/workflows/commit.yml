@@ -31,7 +31,7 @@ jobs:
 
   notebook-dry-run:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Install uv
@@ -49,19 +49,30 @@ jobs:
           path: ~/.cache/matplotlib
           key: matplotlib-fontcache-${{ runner.os }}
       # Execution time on shared GH-hosted runners varies wildly for this step
-      # (observed 4s-612s across otherwise-identical runs with a warm cache)
-      # due to runner-to-runner CPU/noisy-neighbor variance, not anything in
-      # the notebooks themselves - confirmed by running the identical code
+      # (observed 4s-908s across otherwise-identical runs with a warm cache,
+      # occasionally exceeding even a 900s per-cell timeout) due to
+      # runner-to-runner CPU/noisy-neighbor variance, not anything in the
+      # notebooks themselves - confirmed by running the identical code
       # natively (arm64 Linux via podman, exact uv.lock-pinned versions) in a
-      # consistent ~5s every time. The per-cell timeout here is generous
-      # accordingly; the job-level timeout-minutes above is the real backstop
-      # against a genuine hang.
+      # consistent ~5s every time. Retry each notebook a few times rather than
+      # chase an ever-higher timeout; a run that's merely slow still succeeds
+      # on its first or second attempt in seconds.
       - name: Execute notebooks
         run: |
           for f in notebooks/*.ipynb; do
             echo "::group::$f"
-            uv run jupyter nbconvert --to notebook --execute \
-              --ExecutePreprocessor.timeout=900 \
-              --output-dir "$(mktemp -d)" "$f"
+            attempt=1
+            max_attempts=3
+            until uv run jupyter nbconvert --to notebook --execute \
+                --ExecutePreprocessor.timeout=900 \
+                --output-dir "$(mktemp -d)" "$f"
+            do
+              if [ "$attempt" -ge "$max_attempts" ]; then
+                echo "::error::$f failed after $max_attempts attempts"
+                exit 1
+              fi
+              echo "::warning::$f failed on attempt $attempt/$max_attempts, retrying"
+              attempt=$((attempt + 1))
+            done
             echo "::endgroup::"
           done
