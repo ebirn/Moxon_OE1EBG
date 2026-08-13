@@ -11,3 +11,5 @@ opencode.jsonc
 prints
 docs
 fc_export.log
+_output
+.jupyterlite.doit.db

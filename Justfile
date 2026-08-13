@@ -28,3 +28,13 @@ export-list:
 # launch a notebook locally with JupyterLab
 notebook path="notebooks/moxon_tuning_protocol.ipynb":
     uv run jupyter lab {{path}}
+
+# build a static voici/JupyterLite dashboard from notebooks/ into _output/
+voici:
+    # kernel version pinned to match voici-core's bundled app-shell JS;
+    # a newer kernel release here causes webpack "Unsatisfied version" errors
+    uvx --from voici-core --with "jupyterlite-pyodide-kernel==0.7.0" voici notebooks/
+
+# build and serve the static voici dashboard locally
+voici-serve: voici
+    cd _output && python3 -m http.server
